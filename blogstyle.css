@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #e6e6e6;
+}
+
+a {
+  color: #0077be;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #0077be;
+  text-align: center;
+}
+
+form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px grey;
+}
+
+label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px grey;
+  border: none;
+  background-color: #f3f3f3;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #0077be;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.entry {
+width: 50%;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px grey;
+  border-radius: 10px;
+}
+
+.entry h2 {
+  font-size: 1.6rem;
+  color: #0077be;
+  margin-bottom: 10px;
+}
+
+.entry p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.entry .date {
+  font-size: .8rem;
+  color: #999;
+}
+
+.load-more {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.load-more button {
+  padding: 10px 20px;
+  background-color: #0077be;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#liker, #sharer, #viewer {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.stats {
+text-align: left;
+font-size: .8rem;
+color: blue;
+width: 30%;
+box-shadow: 0px 4px 8px grey;
+}
+
+.content {
+font-size: 1.1rem;
+padding: 8px 4px;
+text-align: justify;
+}

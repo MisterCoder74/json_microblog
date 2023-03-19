@@ -1,0 +1,77 @@
+<table id="article-list">
+      <tr>
+        <th>ID Articolo</th>
+        <th>Titolo</th>
+        <th>Autore</th>  
+        <th>Contenuto</th>
+        <th>Data</th>        
+        <th>Status</th>        
+        <th>Action</th>   
+      </tr>
+    </table>
+<br>
+<button onclick="location.reload();">Aggiorna la lista</button>
+<br>
+
+    <script>
+      // Legge tutti i file json nella cartella moviecatalog
+      function readJSON() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "entries.json", true);
+        xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            articlelist = JSON.parse(xmlhttp.responseText);
+            populateTable();
+          }
+        };
+        xmlhttp.send();
+      }
+
+      // Popola la tabella con i dati dei video
+      function populateTable() {
+        var table = document.getElementById("article-list");
+        for (var i = 0; i < articlelist.length; i++) {
+          var article = articlelist[i];
+          var row = table.insertRow();
+          var id = row.insertCell(0);
+           var author = row.insertCell(1);
+          var title = row.insertCell(2);
+          var content = row.insertCell(3);
+           var date = row.insertCell(4);
+          var status = row.insertCell(5); 
+          var action = row.insertCell(6);           
+          
+          id.innerHTML = article.id;
+          author.innerHTML = article.author;
+          title.innerHTML = article.title;
+          content.innerHTML = article.content;
+          date.innerHTML = article.date;
+          status.innerHTML = article.status;
+action.innerHTML = "<button onclick='approveArticle(\"" + article.id + "\");'>Approva</button>";
+
+          
+}
+      }
+    
+
+      readJSON();
+      
+           
+    </script>
+    
+    <script>
+    function approveArticle(id) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("POST", "blogapprover.php", true);
+  xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//      alert("Article approved");
+ 
+    }
+  };
+ xmlhttp.send("id=" + id);
+
+}
+    </script>
+    

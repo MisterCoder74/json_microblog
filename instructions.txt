@@ -1,0 +1,2 @@
+if you want to use the blog approver (for admin) 
+you must filter the blog main file to only load the 'approved' post from the json file
